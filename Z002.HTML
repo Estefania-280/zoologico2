@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoológico</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("fondo.jpg"); /* Puedes cambiar por color si quieres */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+  }
+
+  /* ===== MENÚ LATERAL ===== */
+  nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 20px;
+  }
+
+  nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+  }
+
+  nav a:hover {
+    background-color: red;
+  }
+
+  nav a.activo {
+    background-color: orange;
+  }
+
+  /* ===== CONTENIDO ===== */
+  section {
+    margin-left: 240px;
+    padding: 20px;
+    display: none;
+  }
+
+  section.activo {
+    display: block;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  table {
+    margin: 0 auto;
+    background-color: #77DD77;
+    color: black;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  p {
+    text-align: center;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===== MENÚ ===== -->
+<nav>
+  <a href="#" class="activo" onclick="mostrar('inicio')">Inicio</a>
+  <a href="#" onclick="mostrar('horarios')">Horarios</a>
+  <a href="#" onclick="mostrar('paquetes')">Paquetes</a>
+  <a href="#" onclick="mostrar('atracciones')">Atracciones</a>
+  <a href="#" onclick="mostrar('animales')">Animales</a>
+  <a href="#" onclick="mostrar('contacto')">Contacto</a>
+</nav>
+
+<!-- ===== SECCIONES ===== -->
+
+<section id="inicio" class="activo">
+  <h1>Zoológico</h1>
+  <img src="zoo.jpg" alt="Zoológico" style="width:300px; height:auto;">
+  <p>😊 ¡Disfruta de nuestra variedad de animales y paisajes naturales! 😊</p>
+</section>
+
+<section id="horarios">
+  <h2 style="color:#66CC00;">Horarios</h2>
+  <table border="1">
+    <tr><th>Día</th><th>Apertura</th><th>Cierre</th></tr>
+    <tr><td>Lunes a Viernes</td><td>9:00 AM</td><td>5:00 PM</td></tr>
+    <tr><td>Sábado y Domingo</td><td>9:00 AM</td><td>7:00 PM</td></tr>
+  </table>
+</section>
+
+<section id="paquetes">
+  <h2 style="color:#003300;">Paquetes</h2>
+  <table border="1">
+    <tr>
+      <th>Paquete</th>
+      <th>Descripción</th>
+      <th>Adulto</th>
+      <th>Niño</th>
+    </tr>
+    <tr>
+      <td>GUADAZO</td>
+      <td>Incluye ingreso al zoológico, presentación de aves, Villa Australiana, Herpetario, Selva Tropical, Rancho Veterinario, Monkeyland, CIA Museo Interactivo y más.</td>
+      <td>$130</td><td>$90</td>
+    </tr>
+    <tr>
+      <td>PREMIER</td>
+      <td>Incluye todo lo anterior más acceso al Acuario Guadalajara, Safari Masai Mara, Tren Panorámico y Antártida.</td>
+      <td>$375</td><td>$260</td>
+    </tr>
+    <tr>
+      <td>DIAMANTE</td>
+      <td>Incluye todas las experiencias: SkyZoo, Acuario, Safari, Tren y Antártida.</td>
+      <td>$435</td><td>$335</td>
+    </tr>
+  </table>
+</section>
+
+<section id="atracciones">
+  <h2 style="color:orange;">Atracciones</h2>
+  <img src="ACUARIO.JPG" alt="Acuario" style="width:220px; height:220px;">
+  <img src="SAFARI.JPG" alt="Safari" style="width:220px; height:220px;">
+  <img src="SKY.JPG" alt="Sky Zoo" style="width:220px; height:220px;">
+  <img src="ANTARTIDA.JPG" alt="Antártida" style="width:220px; height:220px;">
+</section>
+
+<section id="animales">
+  <h2 style="color:#964B00;">🐾 Nuestros Animales 🐾</h2>
+  <img src="LEON.JPG" alt="León" style="width:25%;">
+  <img src="JIRAFAS.JPG" alt="Jirafas" style="width:25%;">
+  <img src="PANDAS.JPG" alt="Pandas" style="width:25%;">
+  <img src="ELEFANTE.JPG" alt="Elefante" style="width:25%;">
+</section>
+
+<section id="contacto">
+  <h2 style="color:orange;">Información de contacto</h2>
+  <p>Teléfono: 833 555 1243</p>
+  <p>Correo electrónico: <a href="mailto:jin@zoologico.com" style="color:lightgreen;">jin@zoologico.com</a></p>
+</section>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+function mostrar(id) {
+  document.querySelectorAll("section").forEach(s => s.classList.remove("activo"));
+  document.getElementById(id).classList.add("activo");
+
+  document.querySelectorAll("nav a").forEach(a => a.classList.remove("activo"));
+  event.target.classList.add("activo");
+}
+</script>
+
+</body>
+</html>
